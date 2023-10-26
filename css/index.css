@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: minmax(200px, 20%) auto;
+  grid-template-areas:
+    'header header'
+    'sidebar main'
+    'sidebar contact'
+    'sidebar services'
+    'sidebar footer';
+}
+
+/***** HEADER *****/
+header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 200px auto;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  background-color: #cb293e;
+}
+
+.logo {
+  width: 200px;
+  margin: 0 auto;
+  font-size: 24px;
+  color: #ffdbc5;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  list-style-type: none;
+}
+
+nav ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fce9db;
+  cursor: pointer;
+}
+
+/***** SIDEBAR *****/
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fde9de;
+}
+
+.sidebar ul {
+  margin: 10px 20px;
+  list-style-type: none;
+}
+
+/**** MAIN *****/
+main {
+  grid-area: main;
+  height: 400px;
+  background-image: url('https://wallpapers.com/images/hd/mountain-trees-minimalist-7xpryajznty61ra3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/***** CONTACT *****/
+.contact {
+  display: grid;
+  grid-area: contact;
+  grid-template-columns: 50% 50%;
+  margin: 2%;
+  background-color: white;
+}
+
+.call {
+  max-width: 600px;
+  margin: 2% auto;
+}
+
+.call h1 {
+  font-size: 40px;
+  color: #540031;
+}
+
+.call p {
+  margin-top: 10px;
+  color: #2e102a;
+}
+
+.form-wrapper {
+  width: 70%;
+  margin: 10px auto;
+}
+
+form label {
+  font-size: 18px;
+  color: #2e102a;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding-left: 8px;
+  border-radius: 0;
+  border: 3px solid #2e102a;
+  outline: 0;
+}
+  input[type="text"]:focus {
+    border-radius: 0;
+    border: 3px solid #cb293e;
+  }
+
+input[type="submit"] {
+  margin: 10px 0;
+  padding: 5px 20px;
+  font-size: 18px;
+  background-color: #cb293e;
+  color: white;
+}
+
+/***** SERVICES *****/
+.services {
+  display: grid;
+  grid-area: services;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: white;
+}
+
+.service-wrapper {
+  margin: 5% 10%;
+  padding-top: 80%;
+  background-color: #ffdbc5;
+}
+
+/***** FOOTER *****/
+footer {
+  display: grid;
+  grid-area: footer;
+  grid-template-rows: 160px 80px;
+  background-color: #fe7f4c;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.footer-links a {
+  margin-top: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #2e102a;
+}
+
+.footer-logo {
+  background-color: #cb293e;
+}
+
+footer .logo {
+  line-height: 80px;
+}
+
+@media screen and (max-width: 992px)
+{
+  .contact {
+    grid-template-columns: 100%;
+  }
+
+  form {
+    margin-top: 30px;
+  }
+}
+
+/***** RESPONSIVE *****/
+@media screen and (max-width: 576px) {
+  body {
+    display: grid;
+    grid-template-columns:0 100%;
+  }
+
+  header {
+    grid-template-columns: none;
+    grid-template-rows: 80px 20px;
+    text-align: center;
+    height: 120px;
+  }
+
+  .services {
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: white;
+  }
+
+  .service-wrapper {
+    width: 80%;
+    padding-top: 50%;
+    background-color: #ffdbc5;
+  }
+}
